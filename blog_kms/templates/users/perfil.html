@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+<h2>Perfil</h2>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>Usuario y email</label>
+        {{ u_form.as_p }}
+    </div>
+    <div class="mb-3">
+        <label>Avatar</label><br>
+        <img src="{{ request.user.user_profile.avatar.url }}" alt="Avatar" width="150" height="150" class="rounded-circle">
+
+        {{ p_form.as_p }}
+    </div>
+    <button type="submit" class="btn btn-primary">Actualizar</button>
+</form>
+<a href="{% url 'password_change' %}" class="btn btn-warning mt-3">Cambiar contraseña</a>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Estadísticas{% endblock %}
+{% block content %}
+<h2>Estadísticas Totales</h2>
+<ul class="list-group mt-3">
+    <li class="list-group-item">Kilómetros recorridos: {{ total_kms }}</li>
+    <li class="list-group-item">Dinero recaudado: ${{ total_dinero }}</li>
+    <li class="list-group-item">Pedidos entregados: {{ total_pedidos }}</li>
+</ul>
+{% endblock %}
